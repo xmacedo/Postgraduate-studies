@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="valida-transacao" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.37.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.23.0">
+  <decision id="transacao-decision" name="Transacao">
+    <decisionTable id="DecisionTable_084wthu">
+      <input id="Input_1" label="Valor Transacao" biodi:width="192" camunda:inputVariable="valorTransacao">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>valorTransacao</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1bwrh66" label="Pais Origem Transacao" camunda:inputVariable="paisOrigem">
+        <inputExpression id="LiteralExpression_1jtjz99" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Transacao é Valida?" name="transacaoValida" typeRef="boolean" biodi:width="192" />
+      <rule id="DecisionRule_0202u0b">
+        <inputEntry id="UnaryTests_04uo3h1">
+          <text>&gt;=10000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wtsenp">
+          <text>"Nigeria","Coreia do Norte","Siria"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0yrdwti">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0mlnxbk">
+        <inputEntry id="UnaryTests_04v3o9l">
+          <text>&lt;10000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vsg1em">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0exogi0">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="transacao-decision">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
